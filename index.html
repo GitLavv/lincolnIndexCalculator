@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+<title>Lincoln Index Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1 " />
+<style>
+* {
+    font-family: Arial;
+}
+body {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+h1 {
+	color: green;
+	text-shadow: 1px 1px 4px #666;
+}
+h3 {
+	font-weight: bold;
+	font-style: italic;
+}
+.wrapper {
+	width: 320px;
+	height: 500px;
+	margin: auto;
+}
+button {
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #2bad24;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px #999;
+}
+button:hover {background-color: #165b12}
+button:active {
+  background-color: #0e3d0b;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+p1 {
+	color: grey;
+}
+</style>
+<script type="text/javascript">
+	function calculate()
+	{
+		var firstCaptured = document.getElementById("firstCaptured").value;
+		var secondCaptured = document.getElementById("secondCaptured").value;
+    var markedInSecondCaptured = document.getElementById("markedInSecondCaptured").value;
+
+    var result = Math.ceil((firstCaptured*secondCaptured)/markedInSecondCaptured);
+		var output = document.getElementById("outputText");
+
+		output.innerHTML = "";
+    outputText = document.createTextNode(result + "")
+    output.appendChild(outputText)
+	}
+</script>
+</head>
+<body>
+<div class="wrapper">
+<h1>Lincoln Index Calculator</h1>
+<p>This is a simple calculator for estimating population numbers using the lincoln index.</p>
+<input type="number" id="firstCaptured"></input>
+<h3>First captured</h3>
+<br>
+<input type="number" id="secondCaptured"></input>
+<h3>Second captured</h3>
+<br>
+<input type="number" id="markedInSecondCaptured"></input>
+<h3>Marked in second captured</h3>
+<button id="submitButton" onclick="calculate()">Calculate</button>
+<h3 id="outputText"></h3>
+</div>
+</body>
+</html>
